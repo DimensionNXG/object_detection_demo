@@ -17,15 +17,11 @@ python3 InferenceEngine_HandDetection.py -m /home/nxgdl/HandModule/v2NUC_Hands_w
 ##First generate the Intermediate representation to FP16 format;;
 
 #using the command like::
-'''
-python3 /opt/intel/computer_vision_sdk_2018.3.343/deployment_tools/model_optimizer/mo_tf.py --input_model /home/nxgdl/HandModule/v2NUC_Hands_working/HandPoseNUCModule/hand_inference_graph/frozen_inference_graph.pb  --output_dir /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/ --tensorflow_use_custom_operations_config /opt/intel/computer_vision_sdk/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json  --tensorflow_object_detection_api_pipeline_config /home/nxgdl/HandModule/v2NUC_Hands_working/HandPoseNUCModule/model-checkpoint/ssd_mobilenet_v1_coco.config  --input_shape [1,300,300,3] --data_type FP16
-
-'''
+'''python3 /opt/intel/computer_vision_sdk_2018.3.343/deployment_tools/model_optimizer/mo_tf.py --input_model /home/nxgdl/HandModule/v2NUC_Hands_working/HandPoseNUCModule/hand_inference_graph/frozen_inference_graph.pb  --output_dir /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/ --tensorflow_use_custom_operations_config /opt/intel/computer_vision_sdk/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json  --tensorflow_object_detection_api_pipeline_config /home/nxgdl/HandModule/v2NUC_Hands_working/HandPoseNUCModule/model-checkpoint/ssd_mobilenet_v1_coco.config  --input_shape [1,300,300,3] --data_type FP16 '''
 
 ##Now to run 
 
-'''
- python3 InferenceEngine_HandDetection.py -m /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/frozen_inference_graph.xml -i cam -l /home/nxgdl/inference_engine_samples/intel64/Release/lib/libcpu_extension.so -d MYRIAD --labels /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/frozen_inference_graph.mapping
+'''python3 InferenceEngine_HandDetection.py -m /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/frozen_inference_graph.xml -i cam -l /home/nxgdl/inference_engine_samples/intel64/Release/lib/libcpu_extension.so -d MYRIAD --labels /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/frozen_inference_graph.mapping
 '''
 
 
