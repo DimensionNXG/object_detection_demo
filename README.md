@@ -12,7 +12,7 @@ For cpu extension: type the command $ locate libcpu_extension.so
 python3 InferenceEngine_HandDetection.py -m /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/frozen_inference_graph.xml -i cam -l /home/nxgdl/inference_engine_samples/intel64/Release/lib/libcpu_extension.so -d CPU --labels /home/nxgdl/HandModule/v2NUC_Hands_working/OpenVinoIR/HandIR/frozen_inference_graph.mapping
 ```
 
-```
+
 ## To run on Intel Movidius/Compute Stick ..
 ##First generate the Intermediate representation to FP16 format;;
 
